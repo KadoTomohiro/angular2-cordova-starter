@@ -4,7 +4,7 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "browser": "ng build --prod && cordova run browser",
+    "browser": "ng build --target=production --environment=prod --base-href . && cordova run browser",
     "ng": "ng",
     "start": "ng serve",
     "test": "ng test",
