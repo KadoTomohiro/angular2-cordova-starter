@@ -10,7 +10,6 @@ import {Router} from './app.routes';
 import {AuthGuard} from "./auth-guard";
 import {AuthService} from "./services/auth-service";
 import {CordovaService} from "./services/cordova.service";
-import {ToasterModule} from "angular2-toaster";
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import {ToasterModule} from "angular2-toaster";
     BrowserModule,
     FormsModule,
     HttpModule,
-    ToasterModule,
     Router
   ],
   providers: [
