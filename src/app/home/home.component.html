@@ -1,3 +1,8 @@
 <p>
   Hello World!
 </p>
+<button (click)="takePicture()">Take Picture!</button>
+<img *ngIf="imgData" src="{{imgData}}">
+<span>
+  {{imgData}}
+</span>

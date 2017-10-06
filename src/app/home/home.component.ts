@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CordovaService } from '../services/cordova.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  imgData: string;
+
+  constructor(private cordova: CordovaService) { }
 
   ngOnInit() {
+  }
+
+  takePicture() {
+    this.cordova.camera.getPicture()
+      .then((fileUri) => {
+        console.log('Got picture: ' + fileUri);
+        this.imgData = fileUri;
+      });
   }
 
 }
