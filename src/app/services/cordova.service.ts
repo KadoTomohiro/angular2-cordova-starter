@@ -12,7 +12,7 @@ export class CordovaService {
   constructor() {
     // onDeviceReady
     this.onDeviceReady = new Promise<any>((resolve, reject) => {
-      document.addEventListener("deviceready", () => {
+      document.addEventListener('deviceready', () => {
         resolve();
       }, false);
     });

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from "../services/auth-service";
-import {Router} from "@angular/router";
-import {CordovaService} from "../services/cordova.service";
+import {AuthService} from '../services/auth-service';
+import {Router} from '@angular/router';
+import {CordovaService} from '../services/cordova.service';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +9,14 @@ import {CordovaService} from "../services/cordova.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = "Angular Starter Home page";
+  title = 'Angular Starter Home page';
 
   constructor(private authService: AuthService,
               private router: Router,
               private cordova: CordovaService) {
     this.cordova.onDeviceReady
     .then(() => {
-      console.log("Cordova Device is ready!");
+      console.log('Cordova Device is ready!');
     });
   }
 
@@ -26,5 +26,9 @@ export class AppComponent implements OnInit {
   logout() {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  isAuthenticated(): boolean {
+    return this.authService.isAuthenticated.valueOf();
   }
 }

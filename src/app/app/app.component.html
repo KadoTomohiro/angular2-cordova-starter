@@ -14,8 +14,8 @@
         <li><a [routerLink]="['/']">Home</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="authService.isAuthenticated"><a [routerLink]="['/login']" (click)="logout()">Logout </a></li>
-        <li *ngIf="!authService.isAuthenticated"><a [routerLink]="['/login']">Login </a></li>
+        <li *ngIf="isAuthenticated"><a [routerLink]="['/login']" (click)="logout()">Logout </a></li>
+        <li *ngIf="!isAuthenticated"><a [routerLink]="['/login']">Login </a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
